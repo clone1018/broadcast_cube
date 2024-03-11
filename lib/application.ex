@@ -9,7 +9,6 @@ defmodule BroadcastCube.Application do
   @impl true
   def start(_type, _args) do
     Logger.configure(level: :info)
-    :observer.start()
 
     children = [
       {Bandit, plug: BroadcastCube.Router, ip: @ip, port: @port},
